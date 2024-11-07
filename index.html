@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleo Pollinger's Resume</title>
+    <script src ="js/visitor-counter.js"></script>
+    <script>
+      visitorCounter(); 
+    </script>
+    <style>
+        /* Modern earth-tone color scheme */
+        :root {
+            --primary-dark: #304010;    /* Deep olive */
+            --primary: #808D62;         /* Sage green */
+            --neutral: #828F9D;         /* Steel blue */
+            --light: #E3DCD1;          /* Cream */
+            --accent: #C1AC99;         /* Taupe */
+            /* Extended palette */
+            --background: #F5F2EE;
+            --text: #2A2A2A;
+            --card: #FFFFFF;
+            --shadow: rgba(48, 64, 16, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Modern asymmetric layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 40px;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            position: relative;
+            background: var(--primary-dark);
+            color: var(--light);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px var(--shadow);
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            bottom: 20px;
+            left: 20px;
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 30px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .profile p {
+            color: var(--primary);
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            background-color: var(--primary);
+            color: var(--light);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        /* Main content styling */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .section {
+            background-color: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-title {
+            color: var(--primary-dark);
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .item-subtitle {
+            color: var(--primary);
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .item-date {
+            font-size: 0.9em;
+            color: var(--neutral);
+            margin-bottom: 12px;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background-color: var(--light);
+            color: var(--primary-dark);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <div class="profile-image">CP</div>
+                <h1>Cleo Pollinger</h1>
+                <p>Student @ Loyola Marymount University</p>
+                <p>
+                    Visitor #: <span id="visitor-counter"></span>
+                </p>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    cpolling@lion.lmu.edu
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    (925) 895-7082
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    San Ramon, CA
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <a href="https://www.linkedin.com/in/cleo-pollinger/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" style="color: var(--light); text-decoration: none;">linkedin.com/in/cleo-pollinger</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p>
+                    Passionate and innovative student combining analytical and interpersonal skills.
+                    Experienced in research, social justice, and supporting underserved communities
+                    across international settings.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="timeline-item">
+                    <div class="item-title">Research and Advisory Intern</div>
+                    <div class="item-subtitle">Busara Center for Behavioral Economics, Nairobi, Kenya</div>
+                    <div class="item-date">May 2024 - Present</div>
+                    <ul class="item-description">
+                        <li>Supported design and development of projects aimed at alleviating global poverty</li>
+                        <li>Assisted with qualitative and quantitative research implementation</li>
+                        <li>Organized, cleaned, and analyzed large-scale data for academic projects</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="item-title">Residential Advisor</div>
+                    <div class="item-subtitle">Loyola Marymount University, Los Angeles, CA</div>
+                    <div class="item-date">August 2022 - Present</div>
+                    <ul class="item-description">
+                        <li>Created a welcoming environment for residents; addressed housing-related issues</li>
+                        <li>Conducted monthly events to foster community within Living and Learning pods</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="timeline-item">
+                    <div class="item-title">Bachelor of Science, Information Systems & Business Analytics</div>
+                    <div class="item-subtitle">Loyola Marymount University</div>
+                    <div class="item-date">Expected May 2025</div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Major GPA: 3.86; relevant coursework: Database Management, Data Structures, Cybersecurity</li>
+                        </

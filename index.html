@@ -341,6 +341,54 @@
                             <p>Purpose: I used CloudFront, AWS's content delivery network (CDN), to distribute my website securely. This added a layer of security (HTTPS via SSL/TLS) and improved performance. What I Learned: Configuring CloudFront with S3 was a bit challenging initially, especially when setting up origin access and understanding caching behaviors. However, it reinforced the importance of securing web applications.</p>
                         </li>
                     </ul>
+                     <h2>Reflections on Completing the Cloud Resume Challenge</h2>
+                    
+                    <p>As I am finishing up my Cloud Resume Challenge, I wanted to take a few moments to reflect on things that I have learned from this process. I started this project with no prior knowledge of any Amazon Web Services (AWS) or basic cloud technology background, so it was a steep learning curve learning about all the possibilities to tackle this challenge. As I am just about to complete this challenge, I have realized how much I have learned about the AWS setup and the cloud throughout this process. In this blog post, I will share what I have learned, how my cloud resume challenge is setup, and takeaways from this project.</p>
+
+                    <h2>Building the Backend: Visitor Counter and Automation</h2>
+                    <ul>
+                        <li>
+                            <strong>API Gateway and Lambda</strong>
+                            <p>Purpose: I used API Gateway to trigger a Lambda function that updates the visitor counter stored in a DynamoDB table. What I Learned: This taught me the basics of serverless computing. Lambda allowed me to write Python code for the backend logic without worrying about server management. API Gateway's integration with Lambda highlighted how seamless cloud-based solutions can be.</p>
+                        </li>
+                        <li>
+                            <strong>DynamoDB for Storing Visitor Counts</strong>
+                            <p>Purpose: DynamoDB, AWS's NoSQL database service, stored the visitor count data. What I Learned: Working with DynamoDB was eye-opening because it's so different from traditional SQL databases I was familiar with. It's fast, scalable, and perfect for lightweight data storage.</p>
+                        </li>
+                    </ul>
+
+                    <h2>Developer Workflow: Version Control, CI/CD, and Infrastructure as Code</h2>
+                    <ul>
+                        <li>
+                            <strong>GitHub for Version Control</strong>
+                            <p>Purpose: I used GitHub to track changes in my code and collaborate with automated tools. What I Learned: GitHub's branching and commit features allowed me to experiment without fear of breaking the main project.</p>
+                        </li>
+                        <li>
+                            <strong>GitHub Actions for CI/CD</strong>
+                            <p>Purpose: I implemented GitHub Actions to automate continuous integration and continuous deployment. Every time I pushed changes, the pipeline built and deployed my website. What I Learned: Automation saves time and reduces human error. Setting up the YAML workflow file was a bit daunting, but the results were worth it.</p>
+                        </li>
+                        <li>
+                            <strong>Terraform for Infrastructure as Code</strong>
+                            <p>Purpose: I used Terraform to define and manage AWS resources, such as S3 buckets, CloudFront distributions, and Lambda functions. What I Learned: Writing Terraform scripts taught me the value of declarative resource management. Instead of clicking around in the AWS Management Console, I could codify the infrastructure for repeatability and scalability.</p>
+                        </li>
+                    </ul>
+
+                    <h2>Reflections and Key Takeaways</h2>
+                    <p>The three main things that I have learned from this process are problem-solving, theory into practice, and transferrable skills.</p>
+
+                    <h3>Problem-Solving</h3>
+                    <p>As I was navigating different steps of the challenge I ran into plenty of roadblocks. I tried different things to solve each one of my issues, I typically looked it over myself first, then ChatGPT, and lastly talked it out with another person. Most of my time spent on this project was spent through troubleshooting. The more roadblocks I faced the faster I got at de-bugging and recognizing where the errors might be coming from. Which further solidified my understanding of what is going wrong and why. Each challenge forced me to adapt, troubleshoot, and problem-solve systematically.</p>
+
+                    <h3>Theory into Practice</h3>
+                    <p>Most of my college experience is spent talking about different theoretical concepts, but the Cloud Resume Challenge embraces both the theory and practice of education. Through the class lectures we were able to talk about the concepts and what and how AWS work individually and collaboratively. We then were able to use what we learned in class into practice by completing each step of the challenge. This forced us to actually apply the knowledge we learned into practice and work on our technical skills. This point leads into my next about transferable skills.</p>
+
+                    <h3>Transferable Skills</h3>
+                    <p>Once I had developed a strong understanding of each of the tools and how they are working together, I realized how applicable these skills are for many other projects. I was primarily thinking about one of my past internships where these skills would have come most in handy. I was working with an NGO in South Africa that was manually (pen and paper) taking people's personal information. My best solution at the time was to create a form for people to complete, but now knowing how to setup a website, secure data, and make a website easily accessible for others to access.</p>
+
+                    <h2>Conclusion</h2>
+                    <p>Completing the Cloud Resume Challenge was both a technical and personal achievement. It pushed me out of my comfort zone and taught me how to integrate multiple services to create a cohesive product. The project wasn't just about building a resume website; it was about building confidence in my ability to tackle complex technical challenges.</p>
+
+                    <p>For anyone considering taking on this challenge, I wholeheartedly recommend it. It's more than a resume—it's a transformative experience that equips you with skills and confidence for the future.</p>
                 </div>
             </section>
         </main>

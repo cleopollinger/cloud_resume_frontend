@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleo Pollinger's Resume</title>
-    <script src ="js/visitor-counter.js"></script>
+    <script src="js/visitor-counter.js"></script>
     <script>
       visitorCounter(); 
     </script>
@@ -205,6 +205,26 @@
             border-radius: 12px;
             text-align: center;
         }
+
+        /* Blog post specific styling */
+        .blog-content {
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .blog-content p {
+            margin-bottom: 15px;
+        }
+
+        .blog-content ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -285,79 +305,45 @@
                     <div class="item-description">
                         <ul>
                             <li>Major GPA: 3.86; relevant coursework: Database Management, Data Structures, Cybersecurity</li>
-                        </
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
             <section class="section">
                 <h2 class="section-title">Blog Post</h2>
-                <p>
-                    Reflections on Completing the Cloud Resume Challenge
+                <div class="blog-content">
+                    <h2>Reflections on Completing the Cloud Resume Challenge</h2>
+                    
+                    <p>As I am finishing up my Cloud Resume Challenge, I wanted to take a few moments to reflect on things that I have learned from this process. I started this project with no prior knowledge of any Amazon Web Services (AWS) or basic cloud technology background, so it was a steep learning curve learning about all the possibilities to tackle this challenge. As I am just about to complete this challenge, I have realized how much I have learned about the AWS setup and the cloud throughout this process. In this blog post, I will share what I have learned, how my cloud resume challenge is setup, and takeaways from this project.</p>
 
-As I am finishing up my Cloud Resume Challenge, I wanted to take a few moments to reflect on things that I have learned from this process. I started this project with no prior knowledge of any Amazon Web Services (AWS) or basic cloud technology background, so it was a steep learning curve learning about all the possibilities to tackle this challenge. As I am just about to complete this challenge, I have realized how much I have learned about the AWS setup and the cloud throughout this process. In this blog post, I will share what I have learned, how my cloud resume challenge is setup, and takeaways from this project. 
+                    <h2>What Is the Cloud Resume Challenge and Why Take It On?</h2>
 
-What Is the Cloud Resume Challenge and Why Take It On?
+                    <p>Forrest Brazeal created the Cloud Resume Challenge for aspiring cloud practitioners showcase their skills. The Cloud Resume Challenge asks people to showcase their cloud skills by creating a website that displays their resume. My overall goal when taking on this challenge was to learn more about the tools, how the tools work together, and the overall steps to host a website through the cloud all through hands-on-experience. As a senior in college, I am looking for more tangible skills to build up my experience and resume to show future employers. I want to further develop my technical skills to be able to break into the tech industry and by completing the Cloud Resume Challenge I believe it was one way to start building on different skills. Cloud computing is a cornerstone of modern technology infrastructure, and this challenge presented an opportunity to learn critical tools, understand their synergy, and develop problem-solving skills in real-world scenarios.</p>
 
-Forrest Brazeal created the Cloud Resume Challenge for aspiring cloud practitioners showcase their skills. The Cloud Resume Challenge asks people to showcase their cloud skills by creating a website that displays their resume. My overall goal when taking on this challenge was to learn more about the tools, how the tools work together, and the overall steps to host a website through the cloud all through hands-on-experience. As a senior in college, I am looking for more tangible skills to build up my experience and resume to show future employers. I want to further develop my technical skills to be able to break into the tech industry and by completing the Cloud Resume Challenge I believe it was one way to start building on different skills. Cloud computing is a cornerstone of modern technology infrastructure, and this challenge presented an opportunity to learn critical tools, understand their synergy, and develop problem-solving skills in real-world scenarios.
+                    <h2>Building the Frontend: Domain, Hosting, and Security</h2>
 
-Building the Frontend: Domain, Hosting, and Security
-The first step in my project was setting up the frontend, which is the visible part of the website users interact with. This involved several AWS services and some additional tools:
-
-1. Domain Name Registration with Namecheap
-* Purpose: I purchased a domain name, cleopollinger.com, to give my website a personalized touch.
-* What I Learned: The process of buying and managing a domain gave me insights into how DNS systems operate, something I had never considered before.
-
-2. Connecting the Domain via Route 53
-* Purpose: I used AWS Route 53 to manage the domain and connect it to my website.
-* What I Learned: Setting up DNS records required patience and attention to detail. Misconfigurations could mean my site wouldn’t resolve properly.
-
-3. Static Website Hosting with S3
-* Purpose: The website's content—HTML, CSS, and JavaScript files—was stored in an AWS S3 bucket, which provides scalable storage for static assets.
-* What I Learned: S3 is incredibly versatile and straightforward for hosting static content. Setting up permissions and enabling static website hosting were my first introductions to AWS policies.
-
-4. Securing the Website with CloudFront
-* Purpose: I used CloudFront, AWS’s content delivery network (CDN), to distribute my website securely. This added a layer of security (HTTPS via SSL/TLS) and improved performance.
-* What I Learned: Configuring CloudFront with S3 was a bit challenging initially, especially when setting up origin access and understanding caching behaviors. However, it reinforced the importance of securing web applications.
-
-Building the Backend: Visitor Counter and Automation
-With the frontend deployed, I shifted my focus to the backend, which manages the visitor counter functionality on my website. This was the most technically challenging and rewarding part of the project.
-
-1. API Gateway and Lambda
-* Purpose: I used API Gateway to trigger a Lambda function that updates the visitor counter stored in a DynamoDB table.
-* What I Learned: This taught me the basics of serverless computing. Lambda allowed me to write Python code for the backend logic without worrying about server management. API Gateway’s integration with Lambda highlighted how seamless cloud-based solutions can be.
-
-2. DynamoDB for Storing Visitor Counts
-* Purpose: DynamoDB, AWS’s NoSQL database service, stored the visitor count data.
-* What I Learned: Working with DynamoDB was eye-opening because it’s so different from traditional SQL databases I was familiar with. It’s fast, scalable, and perfect for lightweight data storage.
-
-Developer Workflow: Version Control, CI/CD, and Infrastructure as Code
-Beyond building the website, I learned how to work efficiently as a developer by leveraging powerful tools for version control, automation, and resource management.
-
-1. GitHub for Version Control
-* Purpose: I used GitHub to track changes in my code and collaborate with automated tools.
-* What I Learned: GitHub’s branching and commit features allowed me to experiment without fear of breaking the main project.
-
-2. GitHub Actions for CI/CD
-* Purpose: I implemented GitHub Actions to automate continuous integration and continuous deployment. Every time I pushed changes, the pipeline built and deployed my website.
-* What I Learned: Automation saves time and reduces human error. Setting up the YAML workflow file was a bit daunting, but the results were worth it.
-
-3. Terraform for Infrastructure as Code
-* Purpose: I used Terraform to define and manage AWS resources, such as S3 buckets, CloudFront distributions, and Lambda functions.
-* What I Learned: Writing Terraform scripts taught me the value of declarative resource management. Instead of clicking around in the AWS Management Console, I could codify the infrastructure for repeatability and scalability.
-
-Reflections and Key Takeaways
-
-The three main things that I have learned from this process is problem-solving, theory into practice, and transferrable skills. 
-
-Problem-Solving
-As I was navigating different steps of the challenge I ran into plenty of roadblocks. I tried different things to solve each one of my issues, I typically looked it over myself first, then ChatGPT, and lastly talked it out with another person. Most of my time spent on this project was spent through trouble shooting. The more roadblocks I faced the faster I got at de-bugging and recognizing where the errors might be coming from. Which further solidified my understanding of what is going wrong and why. Each challenge forced me to adapt, troubleshoot, and problem-solve systematically.
-
-Theory into Practice
-Most of my college experience is spent talking about different theoretical concepts, but the Cloud Resume Challenge embraces both the theory and practice of education. Through the class lectures we were able to talk about the concepts and what and how AWS work individually and collaboratively. We then were able to use what we learned in class into practice by completing each step of the challenge. This forced us to actually apply the knowledge we learned into practice and work on our technical skills. This point leads into my next about transferable skills. 
-
-Transferable Skills
-Once I had developed a strong understanding of each of the tools and how they are working together, I realized how applicable these skills are for many other projects. I was primarily thinking about one of my past internships where these skills would have come most in handy. I was working with an NGO in South Africa that was manually (pen and paper) taking people’s personal information. My best solution at the time was to create a form for people to complete, but now knowing how to setup a website, secure data, and make a website easily accessible for others to access. 
-
-Conclusion
-Completing the Cloud Resume Challenge was both a technical and personal achievement. It pushed me out of my comfort zone and taught me how to integrate multiple services to create a cohesive product. The project wasn’t just about building a resume website; it was about building confidence in my ability to tackle complex technical challenges.
-For anyone considering taking on this challenge, I wholeheartedly recommend it. It’s more than a resume—it's a transformative experience that equips you with skills and confidence for the future.
-                </p>
+                    <ul>
+                        <li>
+                            <strong>Domain Name Registration with Namecheap</strong>
+                            <p>Purpose: I purchased a domain name, cleopollinger.com, to give my website a personalized touch. What I Learned: The process of buying and managing a domain gave me insights into how DNS systems operate, something I had never considered before.</p>
+                        </li>
+                        <li>
+                            <strong>Connecting the Domain via Route 53</strong>
+                            <p>Purpose: I used AWS Route 53 to manage the domain and connect it to my website. What I Learned: Setting up DNS records required patience and attention to detail. Misconfigurations could mean my site wouldn't resolve properly.</p>
+                        </li>
+                        <li>
+                            <strong>Static Website Hosting with S3</strong>
+                            <p>Purpose: The website's content—HTML, CSS, and JavaScript files—was stored in an AWS S3 bucket, which provides scalable storage for static assets. What I Learned: S3 is incredibly versatile and straightforward for hosting static content. Setting up permissions and enabling static website hosting were my first introductions to AWS policies.</p>
+                        </li>
+                        <li>
+                            <strong>Securing the Website with CloudFront</strong>
+                            <p>Purpose: I used CloudFront, AWS's content delivery network (CDN), to distribute my website securely. This added a layer of security (HTTPS via SSL/TLS) and improved performance. What I Learned: Configuring CloudFront with S3 was a bit challenging initially, especially when setting up origin access and understanding caching behaviors. However, it reinforced the importance of securing web applications.</p>
+                        </li>
+                    </ul>
+                </div>
             </section>
+        </main>
+    </div>
+</body>
+</html>
